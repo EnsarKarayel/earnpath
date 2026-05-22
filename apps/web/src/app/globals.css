@@ -35,6 +35,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.66;
+}
+
 .app-frame {
   display: grid;
   grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
@@ -148,6 +153,7 @@ label {
 }
 
 select,
+input,
 textarea {
   width: 100%;
   min-height: 42px;
@@ -165,6 +171,7 @@ textarea {
 }
 
 select:focus,
+input:focus,
 textarea:focus {
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(35, 87, 165, 0.12);
@@ -196,6 +203,61 @@ textarea:focus {
 .market-list {
   display: grid;
   gap: 8px;
+}
+
+.auth-card {
+  padding-bottom: 3px;
+}
+
+.signed-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.signed-in strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.status-text {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.status-text.success {
+  color: var(--green-dark);
+  font-weight: 750;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.skill-pill {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 9px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.skill-pill input {
+  width: 16px;
+  min-height: 16px;
+  height: 16px;
+  accent-color: var(--green);
 }
 
 .market-row {
@@ -389,10 +451,24 @@ textarea:focus {
   gap: 10px;
 }
 
-.pricing-list article {
+.pricing-list article,
+.asset-card {
   display: grid;
   gap: 8px;
   padding: 14px;
+}
+
+.asset-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.asset-card p {
+  color: var(--muted);
+  line-height: 1.45;
+  white-space: pre-wrap;
 }
 
 .pricing-list article.highlight {
