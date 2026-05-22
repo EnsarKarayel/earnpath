@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "EarnPath",
+    "slug": "earnpath",
+    "scheme": "earnpath",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.earnpath.app"
+    },
+    "android": {
+      "package": "com.earnpath.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "replace-after-expo-init"
+      }
+    }
+  }
+}
+

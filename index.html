@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EarnPath</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">EP</span>
+        <div>
+          <h1>EarnPath</h1>
+          <p>30 günlük iş ve gelir rotası</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button" id="resetButton" type="button" aria-label="Sıfırla" title="Sıfırla">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M3 12a9 9 0 1 0 3-6.7" />
+            <path d="M3 4v6h6" />
+          </svg>
+        </button>
+        <button class="icon-button" id="printButton" type="button" aria-label="Yazdır" title="Yazdır">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M6 9V2h12v7" />
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <path d="M6 14h12v8H6z" />
+          </svg>
+        </button>
+        <button class="primary-button" id="exportButton" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <path d="M7 10l5 5 5-5" />
+            <path d="M12 15V3" />
+          </svg>
+          Planı indir
+        </button>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="intake-panel" aria-labelledby="profileTitle">
+        <div class="panel-heading">
+          <span class="step-badge">01</span>
+          <div>
+            <h2 id="profileTitle">Profil</h2>
+            <p id="profileSummary">Hızlı gelir öncelikli</p>
+          </div>
+        </div>
+
+        <form id="profileForm">
+          <div class="field-grid">
+            <label>
+              Şehir
+              <select name="city">
+                <option>İstanbul</option>
+                <option>Ankara</option>
+                <option>İzmir</option>
+                <option>Bursa</option>
+                <option>Antalya</option>
+                <option>Gaziantep</option>
+                <option>Konya</option>
+                <option>Online</option>
+              </select>
+            </label>
+
+            <label>
+              Eğitim
+              <select name="education">
+                <option value="highschool">Lise</option>
+                <option value="student">Üniversite öğrencisi</option>
+                <option value="degree">Önlisans / lisans</option>
+                <option value="middle">Ortaokul</option>
+                <option value="none">Diploma yok</option>
+              </select>
+            </label>
+
+            <label>
+              Cihaz
+              <select name="device">
+                <option value="phone">Sadece telefon</option>
+                <option value="computer">Bilgisayar</option>
+                <option value="both">Telefon + bilgisayar</option>
+              </select>
+            </label>
+
+            <label>
+              Günlük zaman
+              <select name="time">
+                <option value="2">1-2 saat</option>
+                <option value="4">3-4 saat</option>
+                <option value="6">5+ saat</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="segmented">
+            <legend>Gelir ihtiyacı</legend>
+            <label>
+              <input type="radio" name="urgency" value="now" checked />
+              <span>Hemen</span>
+            </label>
+            <label>
+              <input type="radio" name="urgency" value="month" />
+              <span>30 gün</span>
+            </label>
+            <label>
+              <input type="radio" name="urgency" value="quarter" />
+              <span>3 ay</span>
+            </label>
+          </fieldset>
+
+          <fieldset class="checkbox-group">
+            <legend>Güçlü olduğun alanlar</legend>
+            <label><input type="checkbox" name="skills" value="communication" checked /> İnsan iletişimi</label>
+            <label><input type="checkbox" name="skills" value="computer" checked /> Bilgisayar işleri</label>
+            <label><input type="checkbox" name="skills" value="sales" /> Satış</label>
+            <label><input type="checkbox" name="skills" value="field" /> Saha işi</label>
+            <label><input type="checkbox" name="skills" value="design" /> İçerik / tasarım</label>
+            <label><input type="checkbox" name="skills" value="repair" /> Tamir / teknik</label>
+            <label><input type="checkbox" name="skills" value="care" /> Bakım desteği</label>
+            <label><input type="checkbox" name="skills" value="food" /> Gıda / servis</label>
+          </fieldset>
+
+          <div class="field-grid">
+            <label>
+              Dil seviyesi
+              <select name="language">
+                <option value="tr">Türkçe</option>
+                <option value="enA2">İngilizce A2</option>
+                <option value="enB1">İngilizce B1+</option>
+                <option value="ar">Arapça</option>
+                <option value="de">Almanca</option>
+                <option value="ru">Rusça</option>
+              </select>
+            </label>
+
+            <label>
+              Çalışma biçimi
+              <select name="mode">
+                <option value="any">Fark etmez</option>
+                <option value="remote">Evden / online</option>
+                <option value="onsite">Yerinde</option>
+                <option value="hybrid">Hibrit</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="wide-label">
+            Kısıtlar
+            <textarea name="constraints" rows="3" placeholder="Örn: Ehliyet yok, akşam çalışabilirim, çocuk bakıyorum"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section class="workspace" aria-live="polite">
+        <div class="summary-strip">
+          <div>
+            <span class="eyebrow">Öncelikli rota</span>
+            <strong id="bestRouteName">Müşteri destek temsilcisi</strong>
+          </div>
+          <div>
+            <span class="eyebrow">İlk gelir</span>
+            <strong id="incomeWindow">7-21 gün</strong>
+          </div>
+          <div>
+            <span class="eyebrow">Hazırlık</span>
+            <strong id="prepScore">Orta</strong>
+          </div>
+        </div>
+
+        <nav class="tabs" aria-label="Çalışma alanı">
+          <button class="tab is-active" type="button" data-tab="route">Rota</button>
+          <button class="tab" type="button" data-tab="applications">Başvuru</button>
+          <button class="tab" type="button" data-tab="cv">CV</button>
+          <button class="tab" type="button" data-tab="money">Gelir</button>
+        </nav>
+
+        <div class="tab-panel is-active" id="routePanel">
+          <div class="section-title">
+            <h2>En iyi 3 yol</h2>
+            <span id="profileTag">İstanbul · lise · 1-2 saat</span>
+          </div>
+          <div class="route-list" id="routeList"></div>
+
+          <div class="timeline-area">
+            <div class="section-title">
+              <h2>30 günlük plan</h2>
+              <button class="ghost-button" id="copyPlanButton" type="button">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </svg>
+                Kopyala
+              </button>
+            </div>
+            <ol class="timeline" id="timeline"></ol>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="applicationsPanel">
+          <div class="section-title">
+            <h2>Başvuru listesi</h2>
+            <button class="ghost-button" id="copyMessageButton" type="button">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M21 15a4 4 0 0 1-4 4H7l-4 4v-4a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4z" />
+              </svg>
+              Mesajı kopyala
+            </button>
+          </div>
+          <div class="job-board" id="jobBoard"></div>
+          <div class="message-box">
+            <h3>Başvuru mesajı</h3>
+            <textarea id="applicationMessage" rows="7"></textarea>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="cvPanel">
+          <div class="section-title">
+            <h2>CV özeti</h2>
+            <button class="ghost-button" id="copyCvButton" type="button">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+              Kopyala
+            </button>
+          </div>
+          <div class="cv-builder">
+            <label>
+              Ad soyad
+              <input id="candidateName" type="text" placeholder="Ad Soyad" />
+            </label>
+            <label>
+              Önceki deneyim
+              <textarea id="experienceInput" rows="4" placeholder="Örn: Market kasası, çağrı merkezi, satış, staj"></textarea>
+            </label>
+            <div class="cv-output" id="cvOutput"></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="moneyPanel">
+          <div class="section-title">
+            <h2>İlk gelir modeli</h2>
+            <span>Satılabilir MVP</span>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card">
+              <span class="price-label">Giriş</span>
+              <h3>Ücretsiz analiz</h3>
+              <p>Rota, eksik beceri ve 3 iş fikri.</p>
+              <strong>0 TL</strong>
+            </article>
+            <article class="price-card featured">
+              <span class="price-label">Hızlı</span>
+              <h3>CV + başvuru paketi</h3>
+              <p>CV metni, LinkedIn özeti, 20 başvuru mesajı.</p>
+              <strong>399 TL</strong>
+            </article>
+            <article class="price-card">
+              <span class="price-label">Premium</span>
+              <h3>30 gün takip</h3>
+              <p>Haftalık rota güncelleme ve başvuru takibi.</p>
+              <strong>999 TL</strong>
+            </article>
+          </div>
+          <div class="metric-grid" id="businessMetrics"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

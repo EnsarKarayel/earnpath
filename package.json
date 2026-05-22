@@ -1,0 +1,21 @@
+{
+  "name": "earnpath",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Global career and income route platform for web, iOS and Android.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:mobile": "npm --workspace apps/mobile run start",
+    "typecheck": "npm --workspaces run typecheck",
+    "lint": "npm --workspaces run lint",
+    "db:types": "supabase gen types typescript --project-id YOUR_PROJECT_ID > packages/db/src/database.types.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

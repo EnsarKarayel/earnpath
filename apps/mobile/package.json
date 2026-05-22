@@ -1,0 +1,28 @@
+{
+  "name": "@earnpath/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo run:ios",
+    "android": "expo run:android",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"lint pending\""
+  },
+  "dependencies": {
+    "@earnpath/core": "0.1.0",
+    "@earnpath/db": "0.1.0",
+    "@earnpath/i18n": "0.1.0",
+    "@supabase/supabase-js": "^2.48.0",
+    "expo": "^52.0.0",
+    "expo-router": "^4.0.0",
+    "react": "^18.3.1",
+    "react-native": "^0.76.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.6.0"
+  }
+}
+

@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.expo/
+dist/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+ios/
+android/
+
