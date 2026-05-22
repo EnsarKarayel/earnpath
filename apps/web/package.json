@@ -15,14 +15,13 @@
     "@earnpath/i18n": "0.1.0",
     "@supabase/supabase-js": "^2.48.0",
     "next": "^15.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react": "18.3.29",
+    "@types/react-dom": "18.3.7",
     "typescript": "^5.6.0"
   }
 }
-

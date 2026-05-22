@@ -69,11 +69,13 @@ export function EarnPathWorkspace() {
       return;
     }
 
+    const activeUser = user;
+
     async function loadUserState() {
       const { data: savedProfile } = await supabase
         .from("profiles")
         .select("*")
-        .eq("id", user.id)
+        .eq("id", activeUser.id)
         .maybeSingle();
 
       if (savedProfile) {
@@ -95,7 +97,7 @@ export function EarnPathWorkspace() {
       const { data: latestPlan } = await supabase
         .from("user_plans")
         .select("created_at,status")
-        .eq("user_id", user.id)
+        .eq("user_id", activeUser.id)
         .order("created_at", { ascending: false })
         .limit(1)
         .maybeSingle();
